@@ -7,6 +7,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { NavComponent } from './component/nav/nav.component';
 import { CarouselComponent } from './component/carousel/carousel.component';
 import { HttpClientModule } from "@angular/common/http";
+import { UltimosLanzamientosComponent } from './component/ultimos-lanzamientos/ultimos-lanzamientos.component';
 
 
 
@@ -15,7 +16,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     RoutingComponent,
     NavComponent,
-    CarouselComponent
+    CarouselComponent,
+    UltimosLanzamientosComponent
   ],
   imports: [
     BrowserModule,
