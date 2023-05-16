@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, RoutingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { NavComponent } from './component/nav/nav.component';
+import { CarouselComponent } from './component/carousel/carousel.component';
+import { HttpClientModule } from "@angular/common/http";
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoutingComponent,
+    NavComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
