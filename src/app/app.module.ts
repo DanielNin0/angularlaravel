@@ -8,6 +8,11 @@ import { NavComponent } from './component/nav/nav.component';
 import { CarouselComponent } from './component/carousel/carousel.component';
 import { HttpClientModule } from "@angular/common/http";
 import { UltimosLanzamientosComponent } from './component/ultimos-lanzamientos/ultimos-lanzamientos.component';
+import { ContinuarViendoComponent } from './component/continuar-viendo/continuar-viendo.component';
+import { MasVistosComponent } from './component/mas-vistos/mas-vistos.component';
+
+
+
 
 
 
@@ -17,7 +22,9 @@ import { UltimosLanzamientosComponent } from './component/ultimos-lanzamientos/u
     RoutingComponent,
     NavComponent,
     CarouselComponent,
-    UltimosLanzamientosComponent
+    UltimosLanzamientosComponent,
+    ContinuarViendoComponent,
+    MasVistosComponent
   ],
   imports: [
     BrowserModule,

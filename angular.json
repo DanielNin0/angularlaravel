@@ -27,7 +27,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/index.bundle.js",
+              "src/assets/js/vendor.bundle.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,7 +92,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/index.bundle.js",
+              "src/assets/js/vendor.bundle.js"
+            ]
           }
         }
       }
