@@ -4,6 +4,7 @@ import { ApiLoginService } from "../../../service/api/api-login/api-login.servic
 import { LoginI } from "../../../models/login.interface";
 import { ResponseI } from "../../../models/response.interface";
 import { Router } from "@angular/router";
+import { NgxSpinnerService } from "ngx-spinner";
 
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginComponent {
     password : new FormControl('', Validators.required)
   })
 
-  constructor(private api:ApiLoginService, private router:Router){}
+  constructor(private api:ApiLoginService, private router:Router, private SpinnerService:NgxSpinnerService){}
 
   errorStatus:boolean =false;
   errormsg:any = "";
@@ -40,24 +41,34 @@ export class LoginComponent {
 
 
   onLogin(form:LoginI){
+    
     if(this.loginForm.invalid){
       Object.values(this.loginForm.controls).forEach(control=>{
         control.markAllAsTouched();
       })
       return ;
     }
+    this.SpinnerService.show();
     this.api.loginByEmail(form).subscribe(data =>{
+     
+      
      let dataResponse:ResponseI =data;
      if (dataResponse.status == "ok") {
          localStorage.setItem("token", dataResponse.result.token);
+         this.SpinnerService.hide();
          this.router.navigate(['index']);
         
      }else{
        this.errorStatus = true;
+       this.SpinnerService.hide();
        this.errormsg = dataResponse.result.error_msg;
       
      }
+     
    });
+   
   
   }
+
+
 }
